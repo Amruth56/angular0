@@ -27,4 +27,8 @@
 <!-- style binding -->
 <br>
 <button [style.background]="isActive?'red':null"
-[style.border]="isActive?'3px solid yellow':''">click</button>
+[style.border]="isActive?'3px solid yellow':''">click</button> 
+
+
+<!-- Event binding -->
+ <button (click)='buttonClick()'>Event Binding </button>
