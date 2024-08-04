@@ -17,7 +17,10 @@
 <button [disabled]="isDisabled ">disable button using property binding</button>
 <br>
 <!-- class binding -->
- <div class = 'center-container'>
-    <button [class.active] = "isActive">Click Me</button>
- </div>
- 
+<div class='center-container '>
+    <button [class.active]="isActive" 
+    [class.no-active] ="!isActive"
+    [class.active-border] = "isActive"
+    [class.no-active-border] = "!isActive"
+    >Click Me</button>
+</div>
