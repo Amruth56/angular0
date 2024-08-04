@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
     <BUTTON>click me</BUTTON>`,
   styles: `h1{color:red;
               background:black} p{color:red; background:yellow}`, 
+  templateUrl: './navbar.component.html', 
+  styleUrl:'./navbar.component.css'
               
 })
 export class AppNavbar {}
