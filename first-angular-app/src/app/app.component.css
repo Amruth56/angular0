@@ -1,0 +1,22 @@
+.active{
+    background-color: black;
+    cursor: pointer;
+    padding:10px;
+    color: white;
+    border-radius:7px;
+    margin: 10px;
+    
+
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* Adjust as needed */
+  }
+  
+
+.no-active{
+    background-color: gray;
+}

@@ -15,3 +15,9 @@
 <button disabled="{{isDisabled }}">disable button using string interpolation</button>
 <br>
 <button [disabled]="isDisabled ">disable button using property binding</button>
+<br>
+<!-- class binding -->
+ <div class = 'center-container'>
+    <button [class.active] = "isActive">Click Me</button>
+ </div>
+ 
