@@ -29,3 +29,8 @@
 .no-active-border{
     border-radius:30%
 }
+
+.apple{
+    background-color: red;
+    border:7px solid black;
+}

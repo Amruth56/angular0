@@ -18,9 +18,12 @@
 <br>
 <!-- class binding -->
 <div class='center-container '>
-    <button [class.active]="isActive" 
-    [class.no-active] ="!isActive"
-    [class.active-border] = "isActive"
-    [class.no-active-border] = "!isActive"
-    >Click Me</button>
+    <button [class.active]="isActive" [class.no-active]="!isActive" [class.active-border]="isActive"
+        [class.no-active-border]="!isActive">Click Me</button>
 </div>
+
+<button [class.apple]="fruitName == 'Apple'">Fruit Ninja</button>
+
+<!-- style binding -->
+<br>
+<button [style.background]="isActive?'red':null">click</button>
