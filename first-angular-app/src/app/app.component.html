@@ -31,4 +31,8 @@
 
 
 <!-- Event binding -->
+ <br>
  <button (click)='buttonClick()'>Event Binding </button>
+ <input type="text" (keyup)="keyEnter()">
+ <input type="text" (keydown) = "onKeyDown($event)">
+ <input type="text" ((keypress)) = "keyEnter()">

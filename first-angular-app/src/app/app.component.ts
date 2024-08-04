@@ -26,4 +26,11 @@ export class AppComponent {
   buttonClick(){
     console.log("Button clicked")
   }
+  keyEnter(){
+    console.log("Input text")
+  }
+  onKeyDown(event: KeyboardEvent): void {
+    if (event.key === 'Enter') {
+      console.log("Enter key pressed")
+  }
 }
