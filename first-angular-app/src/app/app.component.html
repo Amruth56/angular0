@@ -2,8 +2,16 @@
 <h2>{{title}}</h2>
 <p>{{1+1}}</p>
 <!-- <app-navbar></app-navbar> -->
-<!-- <app-header></app-header> --> 
- <p>hi</p>
+<!-- <app-header></app-header> -->
+<p>hi</p>
 
- <img src="{{imgUrl}}" alt="">
- <img src="{{imgUrl2}}" alt="">
+<img src={{imgUrl}} alt="">
+
+<!-- property binding -->
+<img [src]='imgUrl2' alt="">
+<img src='{{imgUrl}}' alt="">
+<img [src]=imgUrl2 alt="">
+
+<button disabled="{{isDisabled }}">disable button using string interpolation</button>
+<br>
+<button [disabled]="isDisabled ">disable button using property binding</button>
