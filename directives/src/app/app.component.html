@@ -8,3 +8,7 @@
  @if (isLoggedIn) {
   <h2>{{userName}}</h2>
  }  
+
+ <!-- if directives with number values -->
+  <button (click) = "countLogInAttempts()" *ngIf="loginCount<3">log in</button>
+  <h4 *ngIf = "loginCount>=3">exceeded 3 login attempts</h4>

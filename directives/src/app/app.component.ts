@@ -12,4 +12,14 @@ import { NgIf } from '@angular/common';
 })
 export class AppComponent {
 isLoggedIn: boolean = false;
-userName:string = 'john doe'}
+userName:string = 'john doe';
+loginCount:number = 0;
+
+countLogInAttempts(){
+  this.loginCount++
+  if(this.loginCount > 3){
+    
+  }
+}
+
+}
