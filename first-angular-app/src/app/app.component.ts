@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AppNavbar } from './navbar/navbar.components';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppNavbar, HeaderComponent],
+  imports: [RouterOutlet, AppNavbar, HeaderComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -21,6 +22,8 @@ export class AppComponent {
   isDisabled: boolean = false;
   isActive: boolean = true;
   fruitName: string = 'Apple';
+
+  userName: string = 'John Doe'
 
   buttonClick() {
     console.log('Button clicked');
@@ -42,5 +45,10 @@ export class AppComponent {
   }
   keyupA(user:HTMLInputElement){
     console.log(user)
+  }
+
+  updateUserName(username:HTMLInputElement){
+    this.userName = username.value;
+    console.log(this.userName)
   }
 }

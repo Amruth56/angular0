@@ -1,5 +1,6 @@
 # angular
 npm install -g @angular/cli
 
-cd project name
-ng serve
+   ng new my-app
+   cd my-app
+   ng serve
