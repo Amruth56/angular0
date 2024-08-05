@@ -40,4 +40,7 @@ export class AppComponent {
   keyupFilternig() {
     console.log('key up event filtering');
   }
+  keyupA(user:HTMLInputElement){
+    console.log(user)
+  }
 }

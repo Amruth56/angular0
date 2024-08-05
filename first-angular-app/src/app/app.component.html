@@ -39,4 +39,6 @@
 <br>
 <input type="text" placeholder="keypress" ((keypress))="keyEnter($event)">
 <br>
-<input type="text" placeholder="keyup.enter" (keyup.enter)="keyupFilternig()">
+<input type="text" placeholder="keyup.enter " (keyup.enter)="keyupFilternig()">
+<br>
+<input type="text" (keyup.a)="keyupA(user)" #user id = 'userInput'>
