@@ -1,0 +1,9 @@
+<!-- old way -->
+<h2>hi</h2>
+<h3>{{userName}}</h3>
+<h2 *ngIf = "isLoggedIn">{{userName}}</h2>
+
+<!-- new way -->
+ @if (isLoggedIn) {
+  <h2>{{userName}}</h2>
+ }
