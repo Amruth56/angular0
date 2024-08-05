@@ -26,13 +26,17 @@
 
 <!-- style binding -->
 <br>
-<button [style.background]="isActive?'red':null"
-[style.border]="isActive?'3px solid yellow':''">click</button> 
+<button [style.background]="isActive?'red':null" [style.border]="isActive?'3px solid yellow':''">click</button>
 
 
 <!-- Event binding -->
- <br>
- <button (click)='buttonClick()'>Event Binding </button>
- <input type="text" (keyup)="keyEnter()">
- <input type="text" (keydown) = "onKeyDown($event)">
- <input type="text" ((keypress)) = "keyEnter()">
+<br>
+<button (click)='buttonClick()'>Event Binding </button>
+<br>
+<input type="text" placeholder="keyup" (keyup)="keyEnter($event)">
+<br>
+<input type="text" placeholder="onKeyDown" (keydown)="onKeyDown($event)">
+<br>
+<input type="text" placeholder="keypress" ((keypress))="keyEnter($event)">
+<br>
+<input type="text" placeholder="keyup.enter" (keyup.enter)="keyupFilternig()">
