@@ -1,4 +1,4 @@
-                    <!-- old way -->
+<!-- old way -->
 <!-- <h2>hi</h2>
 <h3>{{userName}}</h3>
 <h2 *ngIf="isLoggedIn; else message">{{userName}} hi</h2>
@@ -7,32 +7,44 @@
     <h4>user not logged in</h4>
 </ng-template> -->
 
-
-
-                    <!-- new way -->
+<!-- new way -->
 <!-- @if (isLoggedIn) {
 <h2>{{userName}}</h2>
 } @else{
 <h4>user is not logged in</h4>
 } -->
 
-                    <!-- if directives with number values -->
+<!-- if directives with number values -->
 <!-- <button (click)="countLogInAttempts()" *ngIf="loginCount<3">log in</button>
 <h4 *ngIf="loginCount>=3">exceeded 3 login attempts</h4>
 @if (loginCount){
 <h4>you have clicked the login button {{loginCount}} times</h4>
 } -->
 
-
-                    <!-- if directives with string values -->
+<!-- if directives with string values -->
 <h4 *ngIf="userRole == 'Admin'; else memberMessage">Welcome Admin</h4>
 
 <ng-template #memberMessage>
-    <h4> welcome member</h4>
+    <h4>welcome member</h4>
 </ng-template>
 
 @if(userRole == "Admin"){
-    <h2>welcome admin if statement</h2>
+<h2>welcome admin if statement</h2>
 } @else {
-    <h2>welcome member else statement</h2>
+<h2>welcome member else statement</h2>
 }
+
+<ng-template #callToAction>
+    <button>join now</button>
+</ng-template>
+
+<div [ngTemplateOutlet]=callToAction>
+    <h5>Sidebar</h5>
+    <span>hello</span>
+</div>
+<div>
+    <h5>hero</h5>
+</div>
+<div>
+    <h5>footer</h5>
+</div>
