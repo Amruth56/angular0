@@ -4,10 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { NgIf } from '@angular/common';
 
-
-
 @Component({
-  selector: 'app-root',   
+  selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NgIf],
   templateUrl: './app.component.html',
@@ -17,6 +15,8 @@ export class AppComponent {
   isLoggedIn: boolean = true;
   userName: string = 'john doe';
   loginCount: number = 0;
+
+  userRole: string = 'Admin';
 
   countLogInAttempts() {
     this.loginCount++;
