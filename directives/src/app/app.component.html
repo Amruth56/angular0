@@ -1,11 +1,13 @@
 <!-- old way -->
 <h2>hi</h2>
 <h3>{{userName}}</h3>
-<h2 *ngIf="isLoggedIn; else #message">{{userName}}</h2>
-<h2 *ngIf="!isLoggedIn">is not logged in</h2>
+<h2 *ngIf="isLoggedIn; else message">{{userName}} hi</h2>
+<h2 *ngIf="!isLoggedIn; else message">is not logged in using a message</h2>
 <ng-template #message>
     <h4>user not logged in</h4>
 </ng-template>
+
+
 
 <!-- new way -->
 @if (isLoggedIn) {
