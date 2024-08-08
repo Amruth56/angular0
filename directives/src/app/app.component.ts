@@ -3,23 +3,24 @@ import { RouterOutlet } from '@angular/router';
 
 import { FormsModule, NgForm } from '@angular/forms';
 import { NgIf } from '@angular/common';
+
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NgIf],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-isLoggedIn: boolean = false;
-userName:string = 'john doe';
-loginCount:number = 0;
+  isLoggedIn: boolean = false;
+  userName: string = 'john doe';
+  loginCount: number = 0;
 
-countLogInAttempts(){
-  this.loginCount++
-  if(this.loginCount > 3){
-    
+  countLogInAttempts() {
+    this.loginCount++;
+    if (this.loginCount > 3) {
+    }
   }
-}
-
 }

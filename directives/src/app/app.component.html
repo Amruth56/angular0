@@ -1,14 +1,19 @@
 <!-- old way -->
 <h2>hi</h2>
 <h3>{{userName}}</h3>
-<h2 *ngIf = "isLoggedIn">{{userName}}</h2>
-<h2 *ngIf ="!isLoggedIn">is not logged in</h2>
+<h2 *ngIf="isLoggedIn; else #message">{{userName}}</h2>
+<h2 *ngIf="!isLoggedIn">is not logged in</h2>
+<ng-template #message>
+    <h4>user not logged in</h4>
+</ng-template>
 
 <!-- new way -->
- @if (isLoggedIn) {
-  <h2>{{userName}}</h2>
- }  
+@if (isLoggedIn) {
+<h2>{{userName}}</h2>
+} @else{
+<h4>user is not logged in</h4>
+}
 
- <!-- if directives with number values -->
-  <button (click) = "countLogInAttempts()" *ngIf="loginCount<3">log in</button>
-  <h4 *ngIf = "loginCount>=3">exceeded 3 login attempts</h4>
+<!-- if directives with number values -->
+<button (click)="countLogInAttempts()" *ngIf="loginCount<3">log in</button>
+<h4 *ngIf="loginCount>=3">exceeded 3 login attempts</h4>
