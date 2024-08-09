@@ -81,10 +81,12 @@
 <!-- object arrays -->
 <ul>
   <h3>using old angular for loop</h3>
-  <li *ngFor="let user of usersObj">
+  <li *ngFor="let user of usersObj; let i = index ">
+    {{i}} -
     {{ user.name }}
-    <button (click)="deleteUser(user)">Delete</button>
-  </li>
+    <!-- <button (click)="deleteUser(user)">Delete</button> -->
+    <button (click)="deleteUser(i)">Delete</button>
+</li>
 </ul>
 
 <ul>

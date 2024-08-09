@@ -57,8 +57,12 @@ export class AppComponent {
     this.usersObj.push(user);
   }
 
-  deleteUser(user: object) {
-    let index = this.usersObj.indexOf(user);
+  // deleteUser(user: object) {
+  //   let index = this.usersObj.indexOf(user);
+  //   this.usersObj.splice(index, 1);
+  // }
+
+  deleteUser(index: number) {
     this.usersObj.splice(index, 1);
   }
 }
