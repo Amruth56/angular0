@@ -47,4 +47,13 @@ export class AppComponent {
       email: 'raj@gmail.com',
     },
   ];
+
+  addNewUser() {
+    let user = {
+      id: 5,
+      name: 'user 1',
+      email: 'user1@gmail.com',
+    };
+    this.usersObj.push(user )
+  }
 }
