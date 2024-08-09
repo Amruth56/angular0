@@ -64,5 +64,5 @@ export class AppComponent {
 
   deleteUser(index: number) {
     this.usersObj.splice(index, 1);
-  }
+  } 
 }
