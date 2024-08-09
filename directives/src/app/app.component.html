@@ -7,6 +7,9 @@
     <h4>user not logged in</h4>
 </ng-template> -->
 
+
+
+
 <!-- new way -->
 
 <!-- @if (isLoggedIn) {
@@ -15,6 +18,10 @@
 <h4>user is not logged in</h4>
 } -->
 
+
+
+
+
 <!-- if directives with number values -->
 
 <!-- <button (click)="countLogInAttempts()" *ngIf="loginCount<3">log in</button>
@@ -22,6 +29,10 @@
 @if (loginCount){
 <h4>you have clicked the login button {{loginCount}} times</h4>
 } -->
+
+
+
+
 
 <!-- if directives with string values -->
 
@@ -52,9 +63,13 @@
     <h5>footer</h5>
 </div> -->
 
-<!-- ng for Directives  -->
-<h3>{{ users }}</h3>
 
+
+
+
+<!-- ng for Directives  -->
+
+<!-- <h3>{{ users }}</h3>
 <h3 *ngFor="let user of users">{{ user }}</h3>
 <hr />
 <h2>new approach</h2>
@@ -76,4 +91,13 @@
   @for(i of users; track i){
   <li>{{ i }}</li>
   }
+</ul> -->
+
+
+
+
+
+<!-- object arrays -->
+<ul>
+    <li *ngFor="let user of usersObj ">{{user.name}}</li>
 </ul>

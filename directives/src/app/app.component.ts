@@ -24,7 +24,27 @@ export class AppComponent {
   //   }
   // }
 
-  users:Array<string> = ['john', 'sam', 'smith', 'raj']
-
-  
+  users: Array<any> = ['john', 'sam', 'smith', 'raj', 1, 2];
+  usersObj: Array<any> = [
+    {
+      id: 1,
+      name: 'john',
+      email: 'john@gmail.com',
+    },
+    {
+      id: 2,
+      name: 'sam',
+      email: 'sam@gmail.com',
+    },
+    {
+      id: 3,
+      name: 'smith',
+      email: 'smith@gmail.com',
+    },
+    {
+      id: 4,
+      name: 'raj',
+      email: 'raj@gmail.com',
+    },
+  ];
 }
