@@ -54,6 +54,11 @@ export class AppComponent {
       name: 'user 1',
       email: 'user1@gmail.com',
     };
-    this.usersObj.push(user )
+    this.usersObj.push(user);
+  }
+
+  deleteUser(user: object) {
+    let index = this.usersObj.indexOf(user);
+    this.usersObj.splice(index, 1);
   }
 }
