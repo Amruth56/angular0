@@ -7,9 +7,6 @@
     <h4>user not logged in</h4>
 </ng-template> -->
 
-
-
-
 <!-- new way -->
 
 <!-- @if (isLoggedIn) {
@@ -17,9 +14,6 @@
 } @else{
 <h4>user is not logged in</h4>
 } -->
-
-
-
 
 <!-- if directives with number values -->
 
@@ -29,11 +23,8 @@
 <h4>you have clicked the login button {{loginCount}} times</h4>
 } -->
 
-
-
-
 <!-- if directives with string values -->
- 
+
 <!-- <h4 *ngIf="userRole == 'Admin'; else memberMessage">Welcome Admin</h4>
 
 <ng-template #memberMessage>
@@ -61,10 +52,28 @@
     <h5>footer</h5>
 </div> -->
 
-
-
-
 <!-- ng for Directives  -->
- <h3>{{users}}</h3>
+<h3>{{ users }}</h3>
 
- <h3 *ngFor="let user of users">{{user}}</h3>
+<h3 *ngFor="let user of users">{{ user }}</h3>
+<hr />
+<h2>new approach</h2>
+<p>for syntax approach</p>
+@for( i of users; track i){
+<h4>{{ i }}</h4>
+}
+<hr />
+
+<h3>using list</h3>
+<ul>
+  <li *ngFor="let user of users">
+    {{ user }}
+  </li>
+</ul>
+<hr />
+<p>at for</p>
+<ul>
+  @for(i of users; track i){
+  <li>{{ i }}</li>
+  }
+</ul>

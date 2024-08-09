@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { FormsModule, NgForm } from '@angular/forms';
-import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgTemplateOutlet, NgFor],
+  imports: [RouterOutlet, NgIf, NgTemplateOutlet, NgFor, NgClass],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -25,4 +25,6 @@ export class AppComponent {
   // }
 
   users:Array<string> = ['john', 'sam', 'smith', 'raj']
+
+  
 }
