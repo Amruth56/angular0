@@ -99,5 +99,13 @@
 
 <!-- object arrays -->
 <ul>
+    <h3>using old angular for loop</h3>
     <li *ngFor="let user of usersObj ">{{user.name}}</li>
+</ul>
+
+<ul>
+    <h3>using new angular for loop</h3>
+    @for(user of usersObj; track user){
+    <li>{{user.email}}</li>
+    }
 </ul>
