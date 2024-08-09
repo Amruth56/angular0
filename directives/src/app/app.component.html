@@ -81,21 +81,30 @@
 <!-- object arrays -->
 <ul>
   <h3>using old angular for loop</h3>
-  <li *ngFor="let user of usersObj; let i = index ">
+  <p>length  = {{usersObj.length}}</p>
+  <li *ngFor="let user of usersObj; let i = index; let userCount = count ">
+    count = {{ userCount}}
+    <br>
     {{i}} -
     {{ user.name }}
     <!-- <button (click)="deleteUser(user)">Delete</button> -->
     <button (click)="deleteUser(i)">Delete</button>
 </li>
+
 </ul>
 
 <ul>
   <h3>using new angular for loop</h3>
-  @for(user of usersObj; track user; let i = $index){
+  @for(user of usersObj; track user; let i = $index; let userCount = $count){
+    count = {{ userCount}}
+    <br>
   <li> {{i}}.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {{ user.email }}
     <button (click) = "deleteUser(i)">Delete</button>
   </li>
   }
+  @empty{
+    <p>No users, using empty block</p>
+}
 </ul>
 
 <!-- change direction -->

@@ -48,6 +48,10 @@ export class AppComponent {
     },
   ];
 
+  constructor(){
+    console.log(this.usersObj.length)
+  }
+
   addNewUser() {
     let user = {
       id: 5,
