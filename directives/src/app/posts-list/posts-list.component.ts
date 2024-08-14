@@ -12,4 +12,5 @@ export class PostsListComponent {
  @Input() postIsLogin: boolean= false;
 
  childMessage: string = 'passing arguments from child to parent'
+ postCount: number = 0
 }
