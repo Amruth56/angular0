@@ -93,13 +93,13 @@
 
 </ul>  -->
 
-@if(usersObj.length == 0){
+<!-- @if(usersObj.length == 0){
 <p>no users to display - loaded using syntax</p>
-}
+} -->
 
 
 <ul>
-  <h3>using new angular for loop</h3>
+
   @for(user of usersObj;
   track user;
   let i = $index;
@@ -120,7 +120,7 @@
   } @else{
     odd = {{user.id}}
   <!-- odd = {{odd}} - {{userCount}} - {{i}} {{user.name}} -->
-  } 
+  }
 
 
   <br>
@@ -138,9 +138,29 @@
 <!-- <button (click)="addNewUser()">Add new user</button> -->
 
 
-<div [ngSwitch]="usersRole">
+<!-- <div [ngSwitch]="usersRole">
+
   <p *ngSwitchCase = "'admin'">welcome admin</p>
   <p *ngSwitchCase = "'member'">welcome member</p>
 
   <p *ngSwitchDefault >please login</p>
-</div>
+</div> -->
+
+
+hi
+
+<app-header></app-header>
+<app-navbar></app-navbar>
+
+<h1>{{appPostTitle}} (App)</h1>
+
+<br>
+<hr>
+<h1>from parent to child</h1>
+<app-posts-list [postListTitle]="appPostTitle" [postIsLogin]="appIsLogin"></app-posts-list>
+
+<br>
+<hr>
+<h1>from child to parent</h1>
+<p>{{childMessage.childMessage}}</p>
+<p>{{message}}</p>

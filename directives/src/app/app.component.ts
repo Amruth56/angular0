@@ -1,18 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { FormsModule, NgForm } from '@angular/forms';
-import { NgClass, NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet } from '@angular/common';
+import {
+  NgClass,
+  NgFor,
+  NgIf,
+  NgSwitch, 
+  NgSwitchCase,
+  NgSwitchDefault,
+  NgTemplateOutlet,
+} from '@angular/common';
+import { HeaderComponent } from './header/header.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PostsListComponent } from './posts-list/posts-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgTemplateOutlet, NgFor, NgClass, NgSwitchCase ,NgSwitch, NgSwitchDefault],
+  imports: [
+    RouterOutlet,
+    NgIf,
+    NgTemplateOutlet,
+    NgFor,
+    NgClass,
+    NgSwitchCase,
+    NgSwitch,
+    NgSwitchDefault,
+    HeaderComponent,
+    NavbarComponent,
+    PostsListComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  // isLoggedIn: boolean = true;
+export class AppComponent implements AfterViewInit {
+  isLoggedIn: boolean = true;
   // userName: string = 'john doe';
   // loginCount: number = 0;
 
@@ -24,7 +47,7 @@ export class AppComponent {
   //   }
   // }
 
-  users: Array<any> = ['john', 'sam', 'smith', 'raj', 1, 2];
+  // users: Array<any> = ['john', 'sam', 'smith', 'raj', 1, 2];
   usersObj: Array<any> = [
     {
       id: 0,
@@ -48,28 +71,43 @@ export class AppComponent {
     },
   ];
 
-  constructor() {
-    console.log(this.usersObj.length);
-  }
+  // constructor() {
+  //   console.log(this.usersObj.length);
+  // }
 
-  addNewUser() {
-    let user = {
-      id: 5,
-      name: 'user 1',
-      email: 'user1@gmail.com',
-    };
-    this.usersObj.push(user);
-  }
+  // addNewUser() {
+  //   let user = {
+  //     id: 5,
+  //     name: 'user 1',
+  //     email: 'user1@gmail.com',
+  //   };
+  //   this.usersObj.push(user);
+  // }
 
   // deleteUser(user: object) {
   //   let index = this.usersObj.indexOf(user);
   //   this.usersObj.splice(index, 1);
   // }
 
-  deleteUser(index: number) {
-    this.usersObj.splice(index, 1);
-  }
+  // deleteUser(index: number) {
+  //   this.usersObj.splice(index, 1);
+  // }
 
   // usersRole: string = 'admin';
-  usersRole: string = '';
+  // usersRole: string = '';
+
+  appPostTitle: string = 'post 1';
+  appIsLogin: boolean = false;
+
+  @ViewChild(PostsListComponent ) childMessage: any
+  message:string = ''
+
+  constructor(){
+    console.log(this.childMessage);
+  }
+
+  ngAfterViewInit(){
+      console.log(this.childMessage)
+      this.message = this.childMessage.childMessage
+  }
 }
