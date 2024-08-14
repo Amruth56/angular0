@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { FormsModule, NgForm } from '@angular/forms';
-import { NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NgTemplateOutlet, NgFor, NgClass],
+  imports: [RouterOutlet, NgIf, NgTemplateOutlet, NgFor, NgClass, NgSwitchCase ,NgSwitch, NgSwitchDefault],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -27,29 +27,29 @@ export class AppComponent {
   users: Array<any> = ['john', 'sam', 'smith', 'raj', 1, 2];
   usersObj: Array<any> = [
     {
-      id: 1,
+      id: 0,
       name: 'john',
       email: 'john@gmail.com',
     },
     {
-      id: 2,
+      id: 1,
       name: 'sam',
       email: 'sam@gmail.com',
     },
     {
-      id: 3,
+      id: 2,
       name: 'smith',
       email: 'smith@gmail.com',
     },
     {
-      id: 4,
+      id: 3,
       name: 'raj',
       email: 'raj@gmail.com',
     },
   ];
 
-  constructor(){
-    console.log(this.usersObj.length)
+  constructor() {
+    console.log(this.usersObj.length);
   }
 
   addNewUser() {
@@ -68,5 +68,8 @@ export class AppComponent {
 
   deleteUser(index: number) {
     this.usersObj.splice(index, 1);
-  } 
+  }
+
+  // usersRole: string = 'admin';
+  usersRole: string = '';
 }

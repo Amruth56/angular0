@@ -79,7 +79,7 @@
 </ul> -->
 
 <!-- object arrays -->
-<ul>
+<!-- <ul>
   <h3>using old angular for loop</h3>
   <p>length = {{usersObj.length}}</p>
   <li *ngFor="let user of usersObj; let i = index; let userCount = count ">
@@ -87,11 +87,11 @@
     <br>
     {{i}} -
     {{ user.name }}
-    <!-- <button (click)="deleteUser(user)">Delete</button> -->
+    <button (click)="deleteUser(user)">Delete</button>
     <button (click)="deleteUser(i)">Delete</button>
   </li>
 
-</ul>
+</ul>  -->
 
 @if(usersObj.length == 0){
 <p>no users to display - loaded using syntax</p>
@@ -100,24 +100,47 @@
 
 <ul>
   <h3>using new angular for loop</h3>
-  @for(user of usersObj; track user; let i = $index; let userCount = $count; let first = $first; let last = $last; let odd = $odd; let even = $even){
-  count = {{ userCount}}
-<br>
-  @if(even){
-    <div>
-      {{even}} - {{userCount}} - {{i}} {{user.name}}
-    </div>
-  }
-<br>
+  @for(user of usersObj;
+  track user;
+  let i = $index;
+  let userCount = $count;
+  let first = $first;
+  let last = $last;
+  let odd = $odd;
+  let even = $even){
+  <!-- count = {{ userCount}} -->
   <br>
-  <li> {{i}}.&nbsp;  {{ user.email }}
+  <!-- @if(even){
+  <div>
+    even = {{user.id}}
+    <br>
+    eve = {{even}} - {{userCount}} - {{i}} {{user.name}}
+  </div>
+
+  } @else{
+    odd = {{user.id}}
+  <!-- odd = {{odd}} - {{userCount}} - {{i}} {{user.name}} -->
+  } 
+
+
+  <br>
+  <br>
+  <!-- <li> {{i}}.&nbsp; {{ user.email }}
     <button (click)="deleteUser(i)">Delete</button>
-  </li>
-  }
-  @empty{
+  </li> -->
+  <!-- } -->
+  <!-- @empty{
   <p>No users, using empty block</p>
-  }
+  } -->
 </ul>
 
 <!-- change direction -->
-<button (click)="addNewUser()">Add new user</button>
+<!-- <button (click)="addNewUser()">Add new user</button> -->
+
+
+<div [ngSwitch]="usersRole">
+  <p *ngSwitchCase = "'admin'">welcome admin</p>
+  <p *ngSwitchCase = "'member'">welcome member</p>
+
+  <p *ngSwitchDefault >please login</p>
+</div>
