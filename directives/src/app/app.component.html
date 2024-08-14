@@ -157,10 +157,10 @@ hi
 <br>
 <hr>
 <h1>from parent to child</h1>
-<app-posts-list [postListTitle]="appPostTitle" [postIsLogin]="appIsLogin"></app-posts-list>
+<app-posts-list [postListTitle]="appPostTitle" [postIsLogin]="appIsLogin" (MessageEvent)="reciveMessage($event)"></app-posts-list>
 
 <br>
 <hr>
 <h1>from child to parent</h1>
-<p>{{childMessage.childMessage}}</p>
 <p>{{message}}</p>
+<p>{{ messageFromChild}}</p>

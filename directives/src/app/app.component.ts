@@ -6,7 +6,7 @@ import {
   NgClass,
   NgFor,
   NgIf,
-  NgSwitch, 
+  NgSwitch,
   NgSwitchCase,
   NgSwitchDefault,
   NgTemplateOutlet,
@@ -99,15 +99,21 @@ export class AppComponent implements AfterViewInit {
   appPostTitle: string = 'post 1';
   appIsLogin: boolean = false;
 
-  @ViewChild(PostsListComponent ) childMessage: any
-  message:string = ''
+  @ViewChild(PostsListComponent) childMessage: any;
+  message: string = '';
 
-  constructor(){
+  messageFromChild: string = ' ';
+  constructor() {
     console.log(this.childMessage);
   }
 
-  ngAfterViewInit(){
-      console.log(this.childMessage)
-      this.message = this.childMessage.childMessage
+  ngAfterViewInit() {
+    console.log(this.childMessage);
+    this.message = this.childMessage.childMessage;
+  }
+
+  reciveMessage(message: string) {
+    console.log(message);
+    this.messageFromChild = message;
   }
 }
