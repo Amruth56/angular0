@@ -77,11 +77,11 @@
   <li>{{ i }}</li>
   }
 </ul> -->
- 
+
 <!-- object arrays -->
 <ul>
   <h3>using old angular for loop</h3>
-  <p>length  = {{usersObj.length}}</p>
+  <p>length = {{usersObj.length}}</p>
   <li *ngFor="let user of usersObj; let i = index; let userCount = count ">
     count = {{ userCount}}
     <br>
@@ -89,24 +89,35 @@
     {{ user.name }}
     <!-- <button (click)="deleteUser(user)">Delete</button> -->
     <button (click)="deleteUser(i)">Delete</button>
-</li>
+  </li>
 
 </ul>
 
+@if(usersObj.length == 0){
+<p>no users to display - loaded using syntax</p>
+}
+
+
 <ul>
   <h3>using new angular for loop</h3>
-  @for(user of usersObj; track user; let i = $index; let userCount = $count){
-    count = {{ userCount}}
-    <br>
-  <li> {{i}}.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {{ user.email }}
-    <button (click) = "deleteUser(i)">Delete</button>
+  @for(user of usersObj; track user; let i = $index; let userCount = $count; let first = $first; let last = $last; let odd = $odd; let even = $even){
+  count = {{ userCount}}
+<br>
+  @if(even){
+    <div>
+      {{even}} - {{userCount}} - {{i}} {{user.name}}
+    </div>
+  }
+<br>
+  <br>
+  <li> {{i}}.&nbsp;  {{ user.email }}
+    <button (click)="deleteUser(i)">Delete</button>
   </li>
   }
   @empty{
-    <p>No users, using empty block</p>
-}
+  <p>No users, using empty block</p>
+  }
 </ul>
 
 <!-- change direction -->
 <button (click)="addNewUser()">Add new user</button>
- 
