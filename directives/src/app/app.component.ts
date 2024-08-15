@@ -14,6 +14,7 @@ import {
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
+import { CardComponent } from './card/card.component';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,7 @@ import { PostsListComponent } from './posts-list/posts-list.component';
     HeaderComponent,
     NavbarComponent,
     PostsListComponent,
+    CardComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
