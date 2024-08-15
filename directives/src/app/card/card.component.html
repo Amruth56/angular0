@@ -6,9 +6,11 @@
 
 <div class="card">
     <header>
-        <ng-content></ng-content>
-        <div class="class">
-            <ng-content></ng-content>
-        </div>
+        <ng-content select='[header]'></ng-content>
     </header>
+    <div class="class">
+        <ng-content select='[body]'></ng-content>
+    </div>
+
+
 </div>
