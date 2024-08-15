@@ -1,9 +1,15 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  AfterViewInit,
+  ViewContainerRef,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { FormsModule, NgForm } from '@angular/forms';
 import {
   NgClass,
+  NgComponentOutlet,
   NgFor,
   NgIf,
   NgSwitch,
@@ -31,12 +37,13 @@ import { CardComponent } from './card/card.component';
     HeaderComponent,
     NavbarComponent,
     PostsListComponent,
-    CardComponent
+    CardComponent,
+    NgComponentOutlet,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
   isLoggedIn: boolean = true;
   // userName: string = 'john doe';
   // loginCount: number = 0;
@@ -98,24 +105,40 @@ export class AppComponent implements AfterViewInit {
   // usersRole: string = 'admin';
   // usersRole: string = '';
 
-  appPostTitle: string = 'post 1';
-  appIsLogin: boolean = false;
+  // appPostTitle: string = 'post 1';
+  // appIsLogin: boolean = false;
 
-  @ViewChild(PostsListComponent) childMessage: any;
-  message: string = '';
+  // @ViewChild(PostsListComponent) childMessage: any;
+  // message: string = '';
 
-  messageFromChild: string = ' ';
-  constructor() {
-    console.log(this.childMessage);
+  // messageFromChild: string = ' ';
+  // constructor() {
+  //   console.log(this.childMessage);
+  // }
+
+  // ngAfterViewInit() {
+  //   console.log(this.childMessage);
+  //   this.message = this.childMessage.childMessage;
+  // }
+
+  // reciveMessage(message: string) {
+  //   console.log(message);
+  //   this.messageFromChild = message;
+  // }
+
+  // loadComponent() {
+  //   return PostsListComponent;
+  // }
+
+
+      //to create and delete a component
+  constructor(private viewContainer: ViewContainerRef) {}
+  loadComponent() {
+    this.viewContainer.createComponent(PostsListComponent);
   }
 
-  ngAfterViewInit() {
-    console.log(this.childMessage);
-    this.message = this.childMessage.childMessage;
-  }
-
-  reciveMessage(message: string) {
-    console.log(message);
-    this.messageFromChild = message;
+  removeComponent(){
+    this.viewContainer.remove()
   }
 }
+  
