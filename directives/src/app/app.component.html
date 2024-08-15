@@ -188,4 +188,6 @@ hi
 <!-- <button (click) = "loadComponent()">create component</button>
 <button (click) ="removeComponent()">remove component</button> -->
 
-<app-profile></app-profile>
+<app-profile [pUserName]="userName"></app-profile>
+<br>
+<button (click) = "changeUser()">change userName</button>

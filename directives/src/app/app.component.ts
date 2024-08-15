@@ -40,7 +40,7 @@ import { ProfileComponent } from './profile/profile.component';
     PostsListComponent,
     CardComponent,
     NgComponentOutlet,
-    ProfileComponent
+    ProfileComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -132,8 +132,7 @@ export class AppComponent {
   //   return PostsListComponent;
   // }
 
-
-      //to create and delete a component
+  //to create and delete a component
   // constructor(private viewContainer: ViewContainerRef) {}
   // loadComponent() {
   //   this.viewContainer.createComponent(PostsListComponent);
@@ -142,5 +141,9 @@ export class AppComponent {
   // removeComponent(){
   //   this.viewContainer.remove()
   // }
+
+  userName: string = 'John';
+  changeUser() {
+    this.userName = "Alexa"
+  }
 }
-  
