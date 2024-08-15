@@ -21,6 +21,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { CardComponent } from './card/card.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @Component({
   selector: 'app-root',
@@ -39,6 +40,7 @@ import { CardComponent } from './card/card.component';
     PostsListComponent,
     CardComponent,
     NgComponentOutlet,
+    ProfileComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -132,13 +134,13 @@ export class AppComponent {
 
 
       //to create and delete a component
-  constructor(private viewContainer: ViewContainerRef) {}
-  loadComponent() {
-    this.viewContainer.createComponent(PostsListComponent);
-  }
+  // constructor(private viewContainer: ViewContainerRef) {}
+  // loadComponent() {
+  //   this.viewContainer.createComponent(PostsListComponent);
+  // }
 
-  removeComponent(){
-    this.viewContainer.remove()
-  }
+  // removeComponent(){
+  //   this.viewContainer.remove()
+  // }
 }
   
