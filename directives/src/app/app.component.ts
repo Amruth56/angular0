@@ -22,6 +22,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { CardComponent } from './card/card.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ProductsComponent } from './products/products.component';
 
 @Component({
   selector: 'app-root',
@@ -41,6 +42,7 @@ import { ProfileComponent } from './profile/profile.component';
     CardComponent,
     NgComponentOutlet,
     ProfileComponent,
+    ProductsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -146,4 +148,12 @@ export class AppComponent {
   changeUser() {
     this.userName = "Alexa"
   }
+
+  iphone = 'Iphone';
+  samsung = 'Samsung';
+  vivo = 'Vivo';
+
+  m31 = 'M31';
+  xr = 'XR';
+  v17 = 'V17';
 }
