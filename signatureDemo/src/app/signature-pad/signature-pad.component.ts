@@ -3,6 +3,7 @@ import SignaturePad from 'signature_pad';
 
 @Component({
   selector: 'app-signature-pad',
+  standalone:true,
   templateUrl: './signature-pad.component.html',
   styleUrls: ['./signature-pad.component.css']
 })
