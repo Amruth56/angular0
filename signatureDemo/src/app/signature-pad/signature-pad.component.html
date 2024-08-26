@@ -1,0 +1,4 @@
+<canvas #canvas (touchstart)="startDrawing($event)"></canvas>
+<button (click)="clearPad()">Clear</button>
+<button (click)="savePad()">Save</button>
+<img [src]="signatureImg" *ngIf="signatureImg" />
