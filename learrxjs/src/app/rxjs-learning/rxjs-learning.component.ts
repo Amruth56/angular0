@@ -78,7 +78,7 @@ export class RxjsLearningComponent implements OnInit {
       setInterval(()=>{
         this.orderName = data;
       },5000)
-      
+      //hi
      
     })
 
